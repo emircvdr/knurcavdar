@@ -14,7 +14,7 @@ const MainPage = () => {
   React.useEffect(() => {
     EmirAPI.getProducts().then((res) => {
       console.log(res);
-      setProducts(res as ProductBase[]);
+      setProducts([...res].reverse() as ProductBase[]);
     });
   }, []);
   return (
